@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111311" />
+  <title>FootConnect | Find your game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="FootConnect home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span>foot<span>connect</span></span>
+      </a>
+      <div class="top-actions">
+        <button class="icon-btn notification-btn" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
+          <i></i>
+        </button>
+        <button class="avatar avatar-small" aria-label="Open profile">JD</button>
+      </div>
+    </header>
+
+    <main id="app-content">
+      <section class="view active" id="home-view" aria-labelledby="home-title">
+        <div class="greeting fade-in">
+          <div>
+            <p class="eyebrow"><span class="live-dot"></span> Mumbai, India</p>
+            <h1 id="home-title">Find your<br><em>game.</em></h1>
+          </div>
+          <div class="weather-chip"><span>☀</span> 28°</div>
+        </div>
+
+        <div class="hero-actions fade-in delay-1">
+          <button class="primary-btn" data-view="explore-view"><span class="btn-icon">⌕</span> Find a game <span class="arrow">↗</span></button>
+          <button class="secondary-btn" data-modal="create-modal"><span>＋</span> Create a game</button>
+        </div>
+
+        <div class="section-heading fade-in delay-2">
+          <div><p class="eyebrow">Right now</p><h2>Games near you</h2></div>
+          <button class="text-btn" data-view="explore-view">View all <span>→</span></button>
+        </div>
+        <article class="featured-game fade-in delay-2" data-game-id="andheri">
+          <div class="game-topline"><span class="live-pill"><i></i> 3 spots open</span><span>1.8 km away</span></div>
+          <div class="game-info"><div><p class="game-time">Tonight · 9:00 PM</p><h3>Andheri Football Arena</h3><p class="game-meta">7v7 <span>•</span> Intermediate <span>•</span> 90 min</p></div><div class="player-stack"><div class="mini-avatars"><span>AM</span><span>RK</span><span>+4</span></div><strong>7<span>/10</span></strong></div></div>
+          <div class="game-bottom"><div class="progress"><span style="width:70%"></span></div><button class="join-btn" data-join="andheri">Join game <span>↗</span></button></div>
+        </article>
+
+        <div class="section-heading fade-in delay-3">
+          <div><p class="eyebrow">Close to you</p><h2>Turfs near you</h2></div>
+          <button class="text-btn" data-view="explore-view">See map <span>→</span></button>
+        </div>
+        <div class="turf-scroll fade-in delay-3">
+          <article class="turf-card"><div class="turf-image turf-one"><span class="rating">★ 4.8</span><button class="heart" aria-label="Save Andheri Arena">♡</button></div><div class="turf-copy"><h3>Andheri Football Arena</h3><p>1.8 km · Andheri West</p><div><strong>₹1,800</strong><span>/ hour</span></div></div></article>
+          <article class="turf-card"><div class="turf-image turf-two"><span class="rating">★ 4.6</span><button class="heart" aria-label="Save Kicksters Turf">♡</button></div><div class="turf-copy"><h3>Kicksters Turf</h3><p>3.2 km · Jogeshwari</p><div><strong>₹1,500</strong><span>/ hour</span></div></div></article>
+        </div>
+      </section>
+
+      <section class="view" id="explore-view" aria-labelledby="explore-title">
+        <div class="page-title"><div><p class="eyebrow">Explore the pitch</p><h1 id="explore-title">Find your<br><em>next game.</em></h1></div><button class="filter-btn" aria-label="Filter games">☷</button></div>
+        <div class="map-panel"><div class="map-grid"></div><div class="map-road road-a"></div><div class="map-road road-b"></div><div class="map-road road-c"></div><div class="map-label label-a">ANDHERI WEST</div><div class="map-label label-b">JVPD SCHEME</div><button class="map-pin pin-main" data-game-id="andheri">⚽<span>3 open</span></button><button class="map-pin pin-two">⚽</button><button class="map-pin pin-three">⚽</button><div class="you-pin">●</div><div class="map-controls"><button aria-label="Zoom in">＋</button><button aria-label="Zoom out">−</button></div><div class="map-footer"><span class="map-legend"><i class="green"></i> Games</span><span class="map-legend"><i class="white"></i> Turfs</span><span class="map-legend"><i class="blue"></i> You</span></div></div>
+        <div class="section-heading explore-heading"><div><p class="eyebrow">1–5 km radius</p><h2>Need players</h2></div><span class="sort-label">Nearest <span>⌄</span></span></div>
+        <div class="game-list">
+          <article class="game-list-item"><div class="list-icon green-icon">⚽</div><div class="list-content"><div class="game-topline"><span class="live-pill"><i></i> 3 spots open</span><span>1.8 km</span></div><h3>Andheri Football Arena</h3><p>Tonight, 9:00 PM · 7v7</p></div><button class="round-arrow" data-join="andheri" aria-label="Join game">↗</button></article>
+          <article class="game-list-item"><div class="list-icon orange-icon">⚽</div><div class="list-content"><div class="game-topline"><span class="orange-pill">2 spots open</span><span>3.2 km</span></div><h3>Kicksters Turf</h3><p>Tomorrow, 7:30 PM · 5v5</p></div><button class="round-arrow" data-join="kicksters" aria-label="Join game">↗</button></article>
+          <article class="game-list-item"><div class="list-icon blue-icon">⚽</div><div class="list-content"><div class="game-topline"><span class="blue-pill">1 spot open</span><span>4.6 km</span></div><h3>PlayMax Sports Club</h3><p>Sat, 6:00 PM · 7v7</p></div><button class="round-arrow" data-join="playmax" aria-label="Join game">↗</button></article>
+        </div>
+      </section>
+
+      <section class="view" id="games-view"><div class="page-title"><div><p class="eyebrow">Your football calendar</p><h1>My <em>games.</em></h1></div><button class="filter-btn">⋮</button></div><div class="empty-state hidden" id="empty-games"><div class="empty-ball">⚽</div><h2>No games yet</h2><p>Join a game nearby and your upcoming matches will show up here.</p><button class="primary-btn" data-view="explore-view">Find a game <span class="arrow">↗</span></button></div><div class="my-game-card"><div class="my-date"><strong>18</strong><span>JUN</span></div><div><span class="confirmed">CONFIRMED</span><h3>Andheri Football Arena</h3><p>Tonight · 9:00 PM · 7v7</p></div><button class="round-arrow">→</button></div></section>
+
+      <section class="view" id="profile-view"><div class="profile-head"><div class="avatar avatar-large">JD</div><div><p class="eyebrow">Player profile</p><h1>Jay <em>Desai.</em></h1><p class="profile-location">Mumbai · Joined May 2024</p></div><button class="filter-btn">✎</button></div><div class="profile-stats"><div><strong>24</strong><span>Games played</span></div><div><strong>4.9</strong><span>Player rating</span></div><div><strong>8</strong><span>Friends</span></div></div><div class="profile-section"><div class="section-heading"><h2>About you</h2><button class="text-btn">Edit <span>→</span></button></div><div class="tag-row"><span>⚡ Midfielder</span><span>Intermediate</span><span>Evenings</span></div></div><div class="profile-section"><div class="section-heading"><h2>Recent form</h2><span class="form-score">+12 pts</span></div><div class="form-bars"><span style="height:55%"></span><span style="height:75%"></span><span style="height:42%"></span><span style="height:90%"></span><span style="height:65%"></span><span style="height:100%"></span><span style="height:82%"></span></div></div></section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation"><button class="nav-item active" data-view="home-view"><span>⌂</span><small>Home</small></button><button class="nav-item" data-view="explore-view"><span>⌕</span><small>Explore</small></button><button class="nav-item create-nav" data-modal="create-modal"><span>＋</span><small>Create</small></button><button class="nav-item" data-view="games-view"><span>□</span><small>My games</small></button><button class="nav-item" data-view="profile-view"><span>○</span><small>Profile</small></button></nav>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="create-modal"><div class="modal"><button class="modal-close" data-close-modal aria-label="Close">×</button><p class="eyebrow">Make it happen</p><h2>Create a <em>game.</em></h2><p class="modal-intro">Bring your football crew together. We'll suggest the best turf and time nearby.</p><label>Where do you want to play?<select><option>Andheri Football Arena</option><option>Kicksters Turf</option><option>PlayMax Sports Club</option></select></label><div class="form-row"><label>Date<input type="date" value="2024-06-18"></label><label>Time<input type="time" value="21:00"></label></div><label>Match format<div class="format-options"><button class="format-option selected">5v5</button><button class="format-option">7v7</button><button class="format-option">11v11</button></div></label><button class="primary-btn modal-submit">Create game <span class="arrow">↗</span></button></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
