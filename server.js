@@ -7,6 +7,7 @@ import crypto from 'node:crypto';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = Number(process.env.PORT || 3000);
+app.disable('x-powered-by');
 
 const turfs = [
   { id: 'andheri-arena', name: 'Andheri Football Arena', distance: 1.8, address: 'Andheri West', rating: 4.8, price: 1800, hours: '06:00 - 01:00', image: 'https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=900&q=80', slots: ['7:00 PM', '9:00 PM'] },
@@ -21,6 +22,12 @@ let games = [
 ];
 
 app.use(express.json({ limit: '32kb' }));
+app.use((_req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('X-Frame-Options', 'DENY');
+  next();
+});
 app.use(express.static(__dirname));
 
 app.get('/api/health', (_req, res) => res.json({ ok: true, service: 'footconnect-api' }));
@@ -61,4 +68,4 @@ app.post('/api/recommendations', async (req, res) => {
 });
 
 app.get('*', (_req, res) => res.sendFile(path.join(__dirname, 'index.html')));
-app.listen(port, () => console.log(`FootConnect running at http://localhost:${port}`));
+app.listen(port, '0.0.0.0', () => console.log(`FootConnect running on port ${port}`));
